@@ -15,7 +15,7 @@ class LLMService:
         Initialize LLM service
         
         Args:
-            provider: LLM provider (gemini, openai, llama)
+            provider: LLM provider (gemini, openai)
         """
         self.provider = provider or settings.DEFAULT_LLM
         

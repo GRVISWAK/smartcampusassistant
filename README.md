@@ -15,10 +15,10 @@ An intelligent study companion that helps students upload PDFs, get instant summ
 
 ### Backend
 - **FastAPI** - Modern Python web framework
-- **PostgreSQL** - Relational database for structured data
-- **ChromaDB** - Vector database for embeddings
-- **Sentence Transformers** - Text embeddings
-- **Google Gemini / OpenAI** - LLM for text generation
+- **SQLite** - Lightweight relational database
+- **NumPy** - Pure Python vector store with cosine similarity
+- **Sentence Transformers** - Text embeddings (all-MiniLM-L6-v2)
+- **Google Gemini** - LLM for text generation
 - **PyPDF2** - PDF text extraction
 
 ### Frontend
@@ -85,7 +85,6 @@ studypilot/
 ### Prerequisites
 - Python 3.9+
 - Node.js 18+
-- PostgreSQL 14+
 - Git
 
 ### Backend Setup
@@ -113,19 +112,13 @@ studypilot/
    
    Edit `.env` file with your credentials:
    ```env
-   DATABASE_URL=postgresql://username:password@localhost:5432/studypilot
+   DATABASE_URL=sqlite:///./studypilot.db
    GOOGLE_API_KEY=your_gemini_api_key_here
-   OPENAI_API_KEY=your_openai_api_key_here  # Optional
    DEFAULT_LLM=gemini
+   EMBEDDING_MODEL=all-MiniLM-L6-v2
    ```
 
-5. **Create PostgreSQL database:**
-   ```powershell
-   # Using PostgreSQL CLI
-   createdb studypilot
-   ```
-
-6. **Run the backend:**
+5. **Run the backend:**
    ```powershell
    python -m app.main
    ```
