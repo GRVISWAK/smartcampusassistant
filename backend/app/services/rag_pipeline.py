@@ -106,6 +106,9 @@ Provide a clear, accurate answer based on the context. If the context doesn't co
             return response
             
         except Exception as e:
+            import traceback
+            error_details = traceback.format_exc()
+            print(f"RAG Pipeline Error: {error_details}")  # Print full traceback
             return {
                 "error": str(e),
                 "answer": "Failed to generate answer",

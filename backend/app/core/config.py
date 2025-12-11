@@ -18,7 +18,7 @@ class Settings(BaseSettings):
     
     # LLM API Keys
     OPENAI_API_KEY: str = ""
-    GOOGLE_API_KEY: str = "AIzaSyB8tEXQPlQTCrm34mPS8i3sM0CkkvW6jkE"
+    GOOGLE_API_KEY: str
     
     # ChromaDB
     CHROMA_DB_PATH: str = "./chroma_db"

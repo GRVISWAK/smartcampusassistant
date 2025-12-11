@@ -55,6 +55,9 @@ async def chat_with_document(
         return response
         
     except Exception as e:
+        import traceback
+        error_details = traceback.format_exc()
+        print(f"Chat error: {error_details}")  # Print to console for debugging
         raise HTTPException(
             status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
             detail=f"Failed to process question: {str(e)}"

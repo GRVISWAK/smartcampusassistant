@@ -144,13 +144,13 @@ function Chat() {
                 {message.sources && message.sources.length > 0 && (
                   <div className="mt-3 pt-3 border-t border-gray-300">
                     <p className="text-xs font-semibold mb-2">Sources:</p>
-                    {message.sources.map((source, idx) => (
-                      <div key={idx} className="text-xs mb-2">
-                        <span className="font-medium">Page {source.page_number}</span>
-                        <span className="mx-2">•</span>
-                        <span className="opacity-75">{source.chunk_text}</span>
-                      </div>
-                    ))}
+                    <div className="flex flex-wrap gap-2">
+                      {message.sources.map((source, idx) => (
+                        <span key={idx} className="px-2 py-1 bg-gray-200 text-gray-700 text-xs rounded-md font-medium">
+                          Page {source.page_number}
+                        </span>
+                      ))}
+                    </div>
                   </div>
                 )}
                 
